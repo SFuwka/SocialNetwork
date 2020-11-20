@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
           <span className={styles.itemDesc}>Age:</span> 32
         </li>
         <li className={styles.item}>
-          <span className={styles.itemDesc}>Address:</span> Tibet, China
+          <span className={styles.itemDesc}>Address:</span> Tibet, China 
         </li>
         <li className={styles.item}>
           <span className={styles.itemDesc}>Hair:</span> color Orange
