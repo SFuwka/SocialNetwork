@@ -1,0 +1,6 @@
+.contentContainer {
+  display: grid;
+  grid-area: contentContainer;
+  margin: 0 auto; 
+  background-color: cornsilk;
+}

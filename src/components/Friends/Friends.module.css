@@ -1,0 +1,12 @@
+.friends {
+  background-color: lemonchiffon;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30px 100px 100px;
+}
+.title {
+  grid-column: 1/4;
+  padding-top: 3px;
+  text-align: center;
+}

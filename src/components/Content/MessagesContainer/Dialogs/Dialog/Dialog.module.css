@@ -1,0 +1,11 @@
+.dialog {
+  color: black;
+}
+
+.active {
+  border: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+}

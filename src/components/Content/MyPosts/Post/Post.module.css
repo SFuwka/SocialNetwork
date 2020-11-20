@@ -1,0 +1,37 @@
+.post {
+  display: grid;
+  grid-template-areas:
+    "avatar content like"
+    "name content like";
+  grid-template-columns: 3fr 15fr 2fr;
+  background-color: gold;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+
+.postAuthorName {
+  margin: auto auto;
+  grid-area: name;
+}
+.post img {
+  width: 100%;
+  max-width: 200px;
+  min-width: 100px;
+  object-fit: cover;
+}
+.content {
+  border: 1px solid gray;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: white;
+  grid-area: content;
+  background-color: black;
+}
+
+.like {
+  margin: auto auto;
+  grid-area: like;
+  min-width: 50px;
+}

@@ -1,0 +1,5 @@
+.messagesContainer{
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    grid-column: 1/3;
+}

@@ -1,0 +1,12 @@
+.logo img {
+    padding-left: 3px;
+    padding-top: 3px;
+    width: 50px;
+}
+
+
+.header {
+    grid-area: header;
+    background-color: aquamarine;
+    border: 1px solid black;
+}

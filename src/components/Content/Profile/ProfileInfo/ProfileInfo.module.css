@@ -1,0 +1,16 @@
+.profileInfo {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.item {
+  list-style: none;
+}
+
+.itemDesc {
+  font-weight: bold;
+}
+.itemName {
+  text-align: center;
+  font-weight: bold;
+}
