@@ -8,14 +8,13 @@ import Friends from './components/Friends/Friends';
 
 
 function App(props) {
-  
   return (
     <Router>
       <div className="App">
         <Header />
         <Navbar />
-        <Friends friendsList = {props.state.friendsPage}/>
-        <ContentContainer state={props.state} />
+        <Friends friendsList={props.state.friendsPage} />
+        <ContentContainer state={props.state} dispatch={props.dispatch} />
       </div>
     </Router >
   );

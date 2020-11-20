@@ -15,7 +15,7 @@ const MyPosts = (props) => {
   ));
   return (
     <div className={styles.myPosts}>
-      <NewPost addPost={props.profilePage.addPost}/>
+      <NewPost dispatch={props.dispatch} />
       {render}
     </div>
   );

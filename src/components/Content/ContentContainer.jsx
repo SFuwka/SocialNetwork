@@ -15,7 +15,7 @@ const ContentContainer = (props) => {
       <Jumbotron />
       <Route
         path="/profile"
-        render={() => <Profile profilePage={props.state.profilePage} />}
+        render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}
       />
       <Route
         path="/messages"

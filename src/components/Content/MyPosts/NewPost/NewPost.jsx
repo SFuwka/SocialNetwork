@@ -1,13 +1,15 @@
 import React from "react";
+import { addPostActionCreator } from "../../../../redux/state";
 import styles from "./NewPost.module.css";
 
 const NewPost = (props) => {
   let newPostData = React.createRef();
 
   const addPost = () => {
-    props.addPost(newPostData.current.value);
+    let text = newPostData.current.value;
+    props.dispatch(addPostActionCreator(text));
   };
-  
+
   return (
     <div className={styles.newPost}>
       <textarea
