@@ -1,4 +1,7 @@
 const ADD_POST = 'ADD-POST'
+const ADD_MESSAGE = 'ADD-MESSAGE'
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
+const SELECT_DIALOG = 'SELECT-DIALOG'
 const store = {
     _state: {
         profilePage: {
@@ -41,17 +44,44 @@ const store = {
         },
         messagesPage: {
             dialogItems: [
-                { id: 1, name: "Jian YANG" },
-                { id: 2, name: "Richard Hendricks" },
-                { id: 3, name: "Bertram Gilfoyle" },
-                { id: 4, name: "Jared Dunn" },
+                {
+                    id: 1, name: "Jian YANG",
+                    messages:
+                        [{ id: 1, msg: 'my id 1', self: false },
+                        { id: 2, msg: "What the hell 2", self: true },
+                        { id: 3, msg: "What the hell 3", self: false },
+                        { id: 4, msg: "What the hell 4 some long long long very very very long message maybe a litle bit longer and so on so on and so on btw React is cool and node.js cool too express i like and so maybe enought with that hmmmmm...", self: true },
+                        { id: 5, msg: "message with id 5 and for other side i need to use the same thing i know about lorem ipsum but i want to write in english so probably i learn something anyway this message is for test purposes only hmmm did i spell this word right? Or not? tell me if you read this", self: false },
+                        { id: 5, msg: "message with id 6 and for other side i need to use the same thing i know about lorem ipsum but i want to write in english so probably i learn something anyway this message is for test purposes only hmmm did i spell this word right? Or not? tell me if you read this", self: true },
+                        { id: 6, msg: "Yo", self: false },]
+                },
+                {
+                    id: 2, name: "Richard Hendricks",
+                    messages:
+                        [{ id: 1, msg: 'Hey Richard 1', self: true },
+                        { id: 2, msg: "hey Erlich", self: false },
+                        { id: 3, msg: "message with id 3 with Richard", self: false },
+                        { id: 4, msg: "Yo", self: false },]
+                },
+                {
+                    id: 3, name: "Bertram Gilfoyle",
+                    messages:
+                        [{ id: 1, msg: 'Hey Gilfoyle 1', self: true },
+                        { id: 2, msg: "hey Erlich", self: false },
+                        { id: 3, msg: "message with id 3 with Richard", self: false },
+                        { id: 4, msg: "Yo", self: false },]
+                },
+                {
+                    id: 4, name: "Jared Dunn",
+                    messages:
+                        [{ id: 1, msg: 'Hey Jared 1', self: true },
+                        { id: 2, msg: "hey Erlich", self: false },
+                        { id: 3, msg: "message with id 3 with Richard", self: false },
+                        { id: 4, msg: "Yo", self: false },]
+                },
             ],
-            messages: [
-                { id: 1, msg: ["1,", "wd", "Another Message"] },
-                { id: 2, msg: ["What the hell"] },
-                { id: 3, msg: ["messages with id 3"] },
-                { id: 4, msg: ["Yo"] },
-            ]
+            newMessageBody: '',
+            selectedDialog: NaN,
         },
         friendsPage: {
             friends: [
@@ -81,6 +111,23 @@ const store = {
             case (ADD_POST):
                 this._addPost(action.payload)
                 break
+            case (ADD_MESSAGE):
+                if (!this._state.messagesPage.selectedDialog && this._state.messagesPage.selectedDialog !== 0) {
+                    return
+                }
+                this._state.messagesPage.dialogItems[this._state.messagesPage.selectedDialog].messages.push(
+                    { id: 2, msg: this._state.messagesPage.newMessageBody, self: true })
+                this._state.messagesPage.newMessageBody = ''
+                this._callSubscriber()
+                break
+            case (UPDATE_NEW_MESSAGE_BODY):
+                this._state.messagesPage.newMessageBody = action.newText
+                this._callSubscriber()
+                break
+            case (SELECT_DIALOG):
+                this._state.messagesPage.selectedDialog = action.selectedDialog
+                this._callSubscriber()
+                break
             case (''):
                 console.log('TO_DO')
                 break
@@ -91,9 +138,14 @@ const store = {
 
 }
 
-export const addPostActionCreator = (payload) => {
-    return { type: ADD_POST, payload }
-}
+export const selectDialogCreator = (payload) => ({ type: SELECT_DIALOG, selectedDialog: payload - 1 })
+
+export const updateNewMessageBodyCreator = (payload) => ({ type: UPDATE_NEW_MESSAGE_BODY, newText: payload })
+
+export const addPostActionCreator = (payload) => ({ type: ADD_POST, payload })
+
+export const addMessageActionCreator = (payload) => ({ type: ADD_MESSAGE, id: payload })
+
 
 
 export default store

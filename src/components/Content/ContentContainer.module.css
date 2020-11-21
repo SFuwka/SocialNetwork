@@ -3,4 +3,5 @@
   grid-area: contentContainer;
   margin: 0 auto; 
   background-color: cornsilk;
+  grid-template-rows: 200px;
 }

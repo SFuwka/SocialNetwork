@@ -9,17 +9,26 @@ import Settings from "./Settings/Settings";
 import MessagesContainer from "./MessagesContainer/MessagesContainer";
 
 const ContentContainer = (props) => {
-  
   return (
     <div className={styles.contentContainer}>
       <Jumbotron />
       <Route
         path="/profile"
-        render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}
+        render={() => (
+          <Profile
+            profilePage={props.state.profilePage}
+            dispatch={props.dispatch}
+          />
+        )}
       />
       <Route
         path="/messages"
-        render={() => <MessagesContainer messagesPage={props.state.messagesPage} />}
+        render={() => (
+          <MessagesContainer
+            messagesPage={props.state.messagesPage}
+            dispatch={props.dispatch}
+          />
+        )}
       />
       <Route path="/music" component={Music} />
       <Route path="/photo" component={Photo} />
