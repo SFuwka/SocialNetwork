@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Dialog.module.css";
 import { NavLink } from "react-router-dom";
-import { selectDialogCreator } from "../../../../../redux/state";
+import { selectDialogCreator } from "../../../../../redux/reducers/dialogsReducer";
 const Dialog = (props) => {
   const selecDialogtHandler = () => {
     props.dispatch(selectDialogCreator(props.id));

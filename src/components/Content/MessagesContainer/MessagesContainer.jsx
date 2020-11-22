@@ -6,12 +6,13 @@ import { Route } from "react-router-dom";
 import NewMessage from "./Messages/NewMessage/NewMessage";
 
 const MessagesContainer = (props) => {
-  let msg = props.messagesPage.dialogItems.map((dialog) => dialog.messages);
+  
+  let msg = props.dialogsPage.dialogItems.map((dialog) => dialog.messages);
   const dispatch = props.dispatch;
   return (
     <div className={styles.messagesContainer}>
       <Dialogs
-        dialogItems={props.messagesPage.dialogItems}
+        dialogItems={props.dialogsPage.dialogItems}
         dispatch={props.dispatch}
       />
       <Route
@@ -25,7 +26,7 @@ const MessagesContainer = (props) => {
         )}
       />
       <NewMessage
-        newMessageBody={props.messagesPage.newMessageBody}
+        newMessageBody={props.dialogsPage.newMessageBody}
         dispatch={props.dispatch}
       />
     </div>

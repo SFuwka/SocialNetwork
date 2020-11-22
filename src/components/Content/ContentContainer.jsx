@@ -25,7 +25,7 @@ const ContentContainer = (props) => {
         path="/messages"
         render={() => (
           <MessagesContainer
-            messagesPage={props.state.messagesPage}
+            dialogsPage={props.state.dialogsPage}
             dispatch={props.dispatch}
           />
         )}

@@ -2,7 +2,7 @@ import React from "react";
 import {
   addMessageActionCreator,
   updateNewMessageBodyCreator,
-} from "../../../../../redux/state";
+} from "../../../../../redux/reducers/dialogsReducer";
 import styles from "./NewMessage.module.css";
 
 const NewMessage = (props) => {
@@ -11,6 +11,7 @@ const NewMessage = (props) => {
   };
 
   const sendMessageHandler = () => {
+    
     props.dispatch(addMessageActionCreator());
   };
 

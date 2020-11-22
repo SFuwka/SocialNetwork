@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { selectDialogCreator } from "../../../../redux/state";
+import { selectDialogCreator } from "../../../../redux/reducers/dialogsReducer";
 import styles from "./Messages.module.css";
 
 const Messages = (props) => {
+  
   useEffect(()=>{
     props.dispatch(selectDialogCreator(props.dialogId))
   },[])
