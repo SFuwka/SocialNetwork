@@ -5,6 +5,7 @@
   grid-template-rows: 1fr 1fr;
   max-height: 50vh;
   overflow: auto;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .message {
